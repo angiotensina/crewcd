@@ -16,9 +16,10 @@ clinical_analysis_task:
       - Prueba recomendada según guías de actuación clínica: Identificación de la prueba más recomendada según las guías clínicas actuales.
       - Pruebas diagnósticas adicionales: Recomendaciones de pruebas adicionales necesarias para un diagnóstico más exacto.
       - Tratamiento establecido: Propuesta de tratamiento considerando interacciones de fármacos, efectos adversos y alergias conocidas del paciente.
-      - responde sobre los datos obtenidos en la base de datos {database}.
+      - responde sobre los datos obtenidos en la base de datos.
 
-clinical_history:
+
+clinical_history_task:
   description: >
     Compilación y ordenación de toda la información obtenida de los diferentes agentes en una historia clínica completa. La historia clínica debe incluir antecedentes personales, enfermedad clínica actual, pruebas recomendadas según guías de actuación clínica, pruebas diagnósticas adicionales necesarias, y tratamiento establecido.
 
@@ -36,7 +37,7 @@ clinical_history:
       - Tratamiento Establecido
 
   
-  endocrinology_specialist_task:
+endocrinology_specialist_task:
   description: >
     Analizar un informe clínico previamente recibido y enfocar la respuesta en los siguientes puntos: antecedentes personales, enfermedad clínica actual, pruebas recomendadas según guías de actuación clínica, pruebas diagnósticas adicionales necesarias para un diagnóstico más exacto, y tratamiento establecido considerando interacciones de fármacos y efectos adversos o alergias.
     actúa como medico especialista en la especialidad de endocrinología.
@@ -53,4 +54,25 @@ clinical_history:
       - Prueba recomendada según guías de actuación clínica: Identificación de la prueba más recomendada según las guías clínicas actuales.
       - Pruebas diagnósticas adicionales: Recomendaciones de pruebas adicionales necesarias para un diagnóstico más exacto.
       - Tratamiento establecido: Propuesta de tratamiento considerando interacciones de fármacos, efectos adversos y alergias conocidas del paciente.
-      - responde sobre los datos obtenidos en la base de datos {database}.
+      - responde sobre los datos obtenidos en la base de datos.
+
+
+reumatology_specialist_task:
+  description: >
+    Analizar un informe clínico previamente recibido y enfocar la respuesta en los siguientes puntos: antecedentes personales, enfermedad clínica actual, pruebas recomendadas según guías de actuación clínica, pruebas diagnósticas adicionales necesarias para un diagnóstico más exacto, y tratamiento establecido considerando interacciones de fármacos y efectos adversos o alergias.
+    actúa como medico especialista en la especialidad de reumatología.
+
+    Reglas a seguir:
+      - Utilizar un lenguaje claro y preciso.
+      - Proporcionar recomendaciones basadas en la información clínica proporcionada.
+      - Considerar las interacciones de fármacos, efectos adversos y alergias conocidas del paciente.
+
+  expected_output: >
+    Un análisis detallado del informe clínico con los siguientes puntos:
+      - Antecedentes personales: Detalles de la historia médica del paciente.
+      - Enfermedad clínica actual: Descripción detallada de la condición clínica actual del paciente.
+      - Prueba recomendada según guías de actuación clínica: Identificación de la prueba más recomendada según las guías clínicas actuales.
+      - Pruebas diagnósticas adicionales: Recomendaciones de pruebas adicionales necesarias para un diagnóstico más exacto.
+      - Tratamiento establecido: Propuesta de tratamiento considerando interacciones de fármacos, efectos adversos y alergias conocidas del paciente.
+      - responde sobre los datos obtenidos en la base de datos.
+

@@ -12,33 +12,37 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 
-class MyCustomTool(BaseTool):
+class RAG_OpenAI(BaseTool):
     name: str = "Respuesta a la pregunta en español usando OpenAI"
-    description: str = """_summary_: Esta herramienta se utiliza pare obtener la repuesta de openAI en español
-         Args:
-              query (str): la pregunta debe ser respondida por openAI en español
-      """
+    description: str = "Esta herramienta se utiliza para obtener la repuesta de una llm a la pregunta formulada. La pregunta debe ser respondida en español"
     
-    def _run(self, argument: str) -> str:
+    def _run(self, pregunta: str) -> str:
       # Carga las variables de entorno desde un archivo .env
       load_dotenv(find_dotenv(), override=True)
 
       # Obtiene la API key de OpenAI desde las variables de entorno
       api_key_openAI = os.environ.get("OPENAI_API_KEY")
       
-      arg = argument
       llm = os.environ.get("OPENAI_MODEL_NAME")
        
       model = ChatOpenAI(model=llm, api_key=api_key_openAI)
         
-      prompt = ChatPromptTemplate.from_template(template="Question: {arg}\n")
+      prompt = ChatPromptTemplate.from_template(template="Question: {question}\n")
       output_parser = StrOutputParser()
        
       chain = prompt | model | output_parser
-      respuesta = chain.invoke({"question": arg})
+      respuesta = chain.invoke({"question": pregunta})
       
       return respuesta 
 
+
+"""
+if __name__ == "__main__":
+    tool = RAG_OpenAI()
+    resultado = tool.run("¿Cuál es la capital de España?")
+    print(resultado)
+
+"""
 
 
 """

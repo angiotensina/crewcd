@@ -1,0 +1,1 @@
+Historia clínica completa del paciente organizada en las secciones: Antecedentes Personales, Enfermedad Clínica Actual, Prueba Recomendada según Guías Clínicas, Pruebas Diagnósticas Adicionales, Tratamiento Establecido, Consideraciones sobre Interacciones de Fármacos y Efectos Adversos o Alergias, y Recomendaciones Adicionales.

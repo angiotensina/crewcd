@@ -29,7 +29,7 @@ endocrinology_agent:
     professionals and patients alike for your ability to provide accurate
     diagnoses and effective treatment plans.
 
-  reumatology_agent:
+reumatology_agent:
   role: >
     Reumatology Specialist
   goal: >
