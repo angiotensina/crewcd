@@ -41,7 +41,8 @@ class CrewdocCrew():
    			#tools=[], # Example of custom tool, loaded on the beginning of file
 			verbose=True,
 			cache = True,
-			allow_delegation=True
+			allow_delegation=True,
+   			max_iter = 3,
 		)
   
 	@agent
@@ -51,7 +52,8 @@ class CrewdocCrew():
    			tools=[RAG_OpenAI()], # Example of custom tool, loaded on the beginning of file
 			verbose=True,
 			cache = True, 
-			allow_delegation=True
+			allow_delegation=True,
+   			max_iter = 3,				
 		)
   
 	@agent
@@ -61,7 +63,8 @@ class CrewdocCrew():
    			tools=[RAG_OpenAI()], # Example of custom tool, loaded on the beginning of file
 			verbose=True,
 			cache = True,
-			allow_delegation=True
+			allow_delegation=True,
+	   		max_iter = 3,			
 		)
 
 	# Define the manager agent
@@ -72,6 +75,7 @@ class CrewdocCrew():
 			goal="Efficiently manage the crew and ensure high-quality task completion",
 			backstory="You're an experienced project manager, skilled in overseeing complex projects and guiding teams to success. Your role is to coordinate the efforts of the crew members, ensuring that each task is completed on time and to the highest standard.",
 			allow_delegation=True,
+			verbose=True,
 		)
 
 	# Establishing the crew with a hierarchical process and additional configurations
@@ -111,7 +115,7 @@ class CrewdocCrew():
 		return Crew(
 			agents=self.agents, # Automatically created by the @agent decorator
 			tasks=self.tasks, # Automatically created by the @task decorator
-			manager_llm=ChatOpenAI(temperature=0, model = model), # Mandatory if manager_agent is not set
+			manager_llm=ChatOpenAI(temperature=0, model = model), # Mandatory if manager_agent is not set. Mandatory in hierarchical process
 			memory= True, # Enable memory usage for enhanced task execution
    			verbose=2,
       		#process=Process.sequential,
